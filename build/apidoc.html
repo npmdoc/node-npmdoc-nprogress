@@ -1,0 +1,706 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/rstacruz/nprogress"
+
+    >nprogress (v0.2.0)</a>
+</h1>
+<h4>Simple slim progress bars</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nprogress">module nprogress</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.configure">
+            function <span class="apidocSignatureSpan">nprogress.</span>configure
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.done">
+            function <span class="apidocSignatureSpan">nprogress.</span>done
+            <span class="apidocSignatureSpan">(force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.getPositioningCSS">
+            function <span class="apidocSignatureSpan">nprogress.</span>getPositioningCSS
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.inc">
+            function <span class="apidocSignatureSpan">nprogress.</span>inc
+            <span class="apidocSignatureSpan">(amount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.isRendered">
+            function <span class="apidocSignatureSpan">nprogress.</span>isRendered
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.isStarted">
+            function <span class="apidocSignatureSpan">nprogress.</span>isStarted
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.promise">
+            function <span class="apidocSignatureSpan">nprogress.</span>promise
+            <span class="apidocSignatureSpan">($promise)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.remove">
+            function <span class="apidocSignatureSpan">nprogress.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.render">
+            function <span class="apidocSignatureSpan">nprogress.</span>render
+            <span class="apidocSignatureSpan">(fromStart)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.set">
+            function <span class="apidocSignatureSpan">nprogress.</span>set
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.start">
+            function <span class="apidocSignatureSpan">nprogress.</span>start
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nprogress.trickle">
+            function <span class="apidocSignatureSpan">nprogress.</span>trickle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nprogress.</span>settings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nprogress.</span>status</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nprogress.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nprogress" id="apidoc.module.nprogress">module nprogress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.configure" id="apidoc.element.nprogress.configure">
+        function <span class="apidocSignatureSpan">nprogress.</span>configure
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (options) {
+  var key, value;
+  for (key in options) {
+    value = options[key];
+    if (value !== undefined &#x26;&#x26; options.hasOwnProperty(key)) Settings[key] = value;
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Configuration
+-------------
+
+#### `minimum`
+Changes the minimum percentage used upon starting. (default: `0.08`)
+
+~~~ js
+NProgress.<span class="apidocCodeKeywordSpan">configure</span>({ minimum: 0.1 });
+~~~
+
+#### `template`
+You can change the markup using `template`. To keep the progress
+bar working, keep an element with `role=&#x27;bar&#x27;` in there. See the [default template]
+for reference.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.done" id="apidoc.element.nprogress.done">
+        function <span class="apidocSignatureSpan">nprogress.</span>done
+        <span class="apidocSignatureSpan">(force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">done = function (force) {
+  if (!force &#x26;&#x26; !NProgress.status) return this;
+
+  return NProgress.inc(0.3 + 0.5 * Math.random()).set(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Basic usage
+-----------
+
+Simply call `start()` and `done()` to control the progress bar.
+
+~~~ js
+NProgress.start();
+NProgress.<span class="apidocCodeKeywordSpan">done</span>();
+~~~
+
+Using [Turbolinks] or similar? Ensure you&#x27;re using Turbolinks 1.3.0+, and use
+this: (explained
+    [here](https://github.com/rstacruz/nprogress/issues/8#issuecomment-23010560))
+
+~~~ js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.getPositioningCSS" id="apidoc.element.nprogress.getPositioningCSS">
+        function <span class="apidocSignatureSpan">nprogress.</span>getPositioningCSS
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPositioningCSS = function () {
+  // Sniff on document.body.style
+  var bodyStyle = document.body.style;
+
+  // Sniff prefixes
+  var vendorPrefix = (&#x27;WebkitTransform&#x27; in bodyStyle) ? &#x27;Webkit&#x27; :
+                     (&#x27;MozTransform&#x27; in bodyStyle) ? &#x27;Moz&#x27; :
+                     (&#x27;msTransform&#x27; in bodyStyle) ? &#x27;ms&#x27; :
+                     (&#x27;OTransform&#x27; in bodyStyle) ? &#x27;O&#x27; : &#x27;&#x27;;
+
+  if (vendorPrefix + &#x27;Perspective&#x27; in bodyStyle) {
+    // Modern browsers with 3D support, e.g. Webkit, IE10
+    return &#x27;translate3d&#x27;;
+  } else if (vendorPrefix + &#x27;Transform&#x27; in bodyStyle) {
+    // Browsers without 3D support, e.g. IE9
+    return &#x27;translate&#x27;;
+  } else {
+    // Browsers without translate() support, e.g. IE7-8
+    return &#x27;margin&#x27;;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  speed    = Settings.speed,
+  ease     = Settings.easing;
+
+    progress.offsetWidth; /* Repaint */
+
+    queue(function(next) {
+// Set positionUsing if it hasn&#x27;t already been set
+if (Settings.positionUsing === &#x27;&#x27;) Settings.positionUsing = NProgress.<span class="apidocCodeKeywordSpan">getPositioningCSS
+</span>();
+
+// Add transition
+css(bar, barPositionCSS(n, speed, ease));
+
+if (n === 1) {
+  // Fade out
+  css(progress, {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.inc" id="apidoc.element.nprogress.inc">
+        function <span class="apidocSignatureSpan">nprogress.</span>inc
+        <span class="apidocSignatureSpan">(amount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inc = function (amount) {
+  var n = NProgress.status;
+
+  if (!n) {
+    return NProgress.start();
+  } else {
+    if (typeof amount !== &#x27;number&#x27;) {
+      amount = (1 - n) * clamp(Math.random() * n, 0.1, 0.95);
+    }
+
+    n = clamp(n + amount, 0, 0.994);
+    return NProgress.set(n);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+~~~ js
+NProgress.set(0.0);     // Sorta same as .start()
+NProgress.set(0.4);
+NProgress.set(1.0);     // Sorta same as .done()
+~~~
+
+__Incrementing:__ To increment the progress bar, just use `.<span class="apidocCodeKeywordSpan">inc</span>()`. This
+increments it with a random amount. This will never get to 100%: use it for
+every image load (or similar).
+
+~~~ js
+NProgress.inc();
+~~~
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.isRendered" id="apidoc.element.nprogress.isRendered">
+        function <span class="apidocSignatureSpan">nprogress.</span>isRendered
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRendered = function () {
+  return !!document.getElementById(&#x27;nprogress&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  /**
+   * (Internal) renders the progress bar markup based on the `template`
+   * setting.
+   */
+
+  NProgress.render = function(fromStart) {
+if (NProgress.<span class="apidocCodeKeywordSpan">isRendered</span>()) return document.getElementById(&#x27;nprogress&#x27;);
+
+addClass(document.documentElement, &#x27;nprogress-busy&#x27;);
+
+var progress = document.createElement(&#x27;div&#x27;);
+progress.id = &#x27;nprogress&#x27;;
+progress.innerHTML = Settings.template;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.isStarted" id="apidoc.element.nprogress.isStarted">
+        function <span class="apidocSignatureSpan">nprogress.</span>isStarted
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isStarted = function () {
+  return typeof NProgress.status === &#x27;number&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * Sets the progress bar status, where `n` is a number from `0.0` to `1.0`.
+   *
+   *     NProgress.set(0.4);
+   *     NProgress.set(1.0);
+   */
+
+  NProgress.set = function(n) {
+var started = NProgress.<span class="apidocCodeKeywordSpan">isStarted</span>();
+
+n = clamp(n, Settings.minimum, 1);
+NProgress.status = (n === 1 ? null : n);
+
+var progress = NProgress.render(!started),
+    bar      = progress.querySelector(Settings.barSelector),
+    speed    = Settings.speed,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.promise" id="apidoc.element.nprogress.promise">
+        function <span class="apidocSignatureSpan">nprogress.</span>promise
+        <span class="apidocSignatureSpan">($promise)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">promise = function ($promise) {
+  if (!$promise || $promise.state() === &#x22;resolved&#x22;) {
+    return this;
+  }
+
+  if (current === 0) {
+    NProgress.start();
+  }
+
+  initial++;
+  current++;
+
+  $promise.always(function() {
+    current--;
+    if (current === 0) {
+        initial = 0;
+        NProgress.done();
+    } else {
+        NProgress.set((initial - current) / initial);
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.remove" id="apidoc.element.nprogress.remove">
+        function <span class="apidocSignatureSpan">nprogress.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+  removeClass(document.documentElement, &#x27;nprogress-busy&#x27;);
+  removeClass(document.querySelector(Settings.parent), &#x27;nprogress-custom-parent&#x27;);
+  var progress = document.getElementById(&#x27;nprogress&#x27;);
+  progress &#x26;&#x26; removeElement(progress);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Using [Turbolinks] or similar? Ensure you&#x27;re using Turbolinks 1.3.0+, and use
+this: (explained
+   [here](https://github.com/rstacruz/nprogress/issues/8#issuecomment-23010560))
+
+~~~ js
+$(document).on(&#x27;page:fetch&#x27;,   function() { NProgress.start(); });
+$(document).on(&#x27;page:change&#x27;,  function() { NProgress.done(); });
+$(document).on(&#x27;page:restore&#x27;, function() { NProgress.<span class="apidocCodeKeywordSpan">remove</span>(); });
+~~~
+
+Ideas
+-----
+
+* Add progress to your Ajax calls! Bind it to the jQuery `ajaxStart` and
+`ajaxStop` events.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.render" id="apidoc.element.nprogress.render">
+        function <span class="apidocSignatureSpan">nprogress.</span>render
+        <span class="apidocSignatureSpan">(fromStart)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function (fromStart) {
+  if (NProgress.isRendered()) return document.getElementById(&#x27;nprogress&#x27;);
+
+  addClass(document.documentElement, &#x27;nprogress-busy&#x27;);
+
+  var progress = document.createElement(&#x27;div&#x27;);
+  progress.id = &#x27;nprogress&#x27;;
+  progress.innerHTML = Settings.template;
+
+  var bar      = progress.querySelector(Settings.barSelector),
+      perc     = fromStart ? &#x27;-100&#x27; : toBarPerc(NProgress.status || 0),
+      parent   = document.querySelector(Settings.parent),
+      spinner;
+
+  css(bar, {
+    transition: &#x27;all 0 linear&#x27;,
+    transform: &#x27;translate3d(&#x27; + perc + &#x27;%,0,0)&#x27;
+  });
+
+  if (!Settings.showSpinner) {
+    spinner = progress.querySelector(Settings.spinnerSelector);
+    spinner &#x26;&#x26; removeElement(spinner);
+  }
+
+  if (parent != document.body) {
+    addClass(parent, &#x27;nprogress-custom-parent&#x27;);
+  }
+
+  parent.appendChild(progress);
+  return progress;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  NProgress.set = function(n) {
+var started = NProgress.isStarted();
+
+n = clamp(n, Settings.minimum, 1);
+NProgress.status = (n === 1 ? null : n);
+
+var progress = NProgress.<span class="apidocCodeKeywordSpan">render</span>(!started),
+    bar      = progress.querySelector(Settings.barSelector),
+    speed    = Settings.speed,
+    ease     = Settings.easing;
+
+progress.offsetWidth; /* Repaint */
+
+queue(function(next) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.set" id="apidoc.element.nprogress.set">
+        function <span class="apidocSignatureSpan">nprogress.</span>set
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (n) {
+  var started = NProgress.isStarted();
+
+  n = clamp(n, Settings.minimum, 1);
+  NProgress.status = (n === 1 ? null : n);
+
+  var progress = NProgress.render(!started),
+      bar      = progress.querySelector(Settings.barSelector),
+      speed    = Settings.speed,
+      ease     = Settings.easing;
+
+  progress.offsetWidth;<span class="apidocCodeCommentSpan"> /* Repaint */
+</span>
+  queue(function(next) {
+    // Set positionUsing if it hasn&#x27;t already been set
+    if (Settings.positionUsing === &#x27;&#x27;) Settings.positionUsing = NProgress.getPositioningCSS();
+
+    // Add transition
+    css(bar, barPositionCSS(n, speed, ease));
+
+    if (n === 1) {
+      // Fade out
+      css(progress, {
+        transition: &#x27;none&#x27;,
+        opacity: 1
+      });
+      progress.offsetWidth; /* Repaint */
+
+      setTimeout(function() {
+        css(progress, {
+          transition: &#x27;all &#x27; + speed + &#x27;ms linear&#x27;,
+          opacity: 0
+        });
+        setTimeout(function() {
+          NProgress.remove();
+          next();
+        }, speed);
+      }, speed);
+    } else {
+      setTimeout(next, speed);
+    }
+  });
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ * Make a fancy loading bar even without Turbolinks/Pjax! Bind it to
+ `$(document).ready` and `$(window).load`.
+
+Advanced usage
+--------------
+
+__Percentages:__ To set a progress percentage, call `.<span class="apidocCodeKeywordSpan">set</span>(n)`, where *n* is a
+number between `0..1`.
+
+~~~ js
+NProgress.set(0.0);     // Sorta same as .start()
+NProgress.set(0.4);
+NProgress.set(1.0);     // Sorta same as .done()
+~~~
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.start" id="apidoc.element.nprogress.start">
+        function <span class="apidocSignatureSpan">nprogress.</span>start
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function () {
+  if (!NProgress.status) NProgress.set(0);
+
+  var work = function() {
+    setTimeout(function() {
+      if (!NProgress.status) return;
+      NProgress.trickle();
+      work();
+    }, Settings.trickleSpeed);
+  };
+
+  if (Settings.trickle) work();
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Basic usage
+-----------
+
+Simply call `start()` and `done()` to control the progress bar.
+
+~~~ js
+NProgress.<span class="apidocCodeKeywordSpan">start</span>();
+NProgress.done();
+~~~
+
+Using [Turbolinks] or similar? Ensure you&#x27;re using Turbolinks 1.3.0+, and use
+this: (explained
+[here](https://github.com/rstacruz/nprogress/issues/8#issuecomment-23010560))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nprogress.trickle" id="apidoc.element.nprogress.trickle">
+        function <span class="apidocSignatureSpan">nprogress.</span>trickle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trickle = function () {
+  return NProgress.inc(Math.random() * Settings.trickleRate);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   */
+  NProgress.start = function() {
+if (!NProgress.status) NProgress.set(0);
+
+var work = function() {
+  setTimeout(function() {
+    if (!NProgress.status) return;
+    NProgress.<span class="apidocCodeKeywordSpan">trickle</span>();
+    work();
+  }, Settings.trickleSpeed);
+};
+
+if (Settings.trickle) work();
+
+return this;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
